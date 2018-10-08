@@ -3,7 +3,8 @@ module.exports = {
         "browser": true
     },
     "globals": {
-        "angular": true
+        "angular": true,
+        "require": true
     },
     "extends": ["eslint:recommended"],
     "parserOptions": {
