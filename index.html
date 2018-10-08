@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Background Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="imageCtrl as vm">
+    <div class="test-form">
+        <img id="logo" src="images/Xesmar300_shadow.png"/>
+        <form id="login">
+            <select name="towns">
+                <option value="empty"></option>
+                <option value="cambados">CAMBADOS</option>
+                <option value="vilanova">VILANOVA</option>
+                <option value="vilaxoan">VILAXOAN</option>
+                <option value="qualigy">QUALIGY</option>
+            </select>
+            <input name="username" placeholder="Email ou usuario" />
+            <input type="password" name="pwd" placeholder="Contrasinal"/> 
+            <div>
+                <input type="checkbox" name="remember" class="chkbox"/>
+                <span class="bold-text">Manter a sesión iniciada</span>
+            </div>
+            <a href="http://google.es">Esqueceu o seu contrasinal?</a>
+            <input class="button-submit" type="submit" value="Entrar"/>
+        </form>
+        <form id="new-user">
+            <br/>
+            <span class="bold-text">Eres novo?</span>
+            <input class="button-submit" type="submit" value="Rexistrate"/>
+        </form>
+    </div>
+    <bg-slider></bg-slider>
+</body>
+
+</html>
