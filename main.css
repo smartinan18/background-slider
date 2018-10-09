@@ -10,14 +10,6 @@
     text-align: center;
 }
 
-.button.inactive {
-    background-color: lightgray;
-}
-
-.button.active {
-    background-color: dodgerblue;
-}
-
 .button {
     display: inline-block;
     border-width: 0;
@@ -27,6 +19,14 @@
     padding: 6px 6px 6px 6px;
     width: 14px;
     height: 14px;
+}
+
+.button.inactive {
+    background-color: lightgray;
+}
+
+.button.active {
+    background-color: dodgerblue;
 }
 
 body {
@@ -92,4 +92,16 @@ input, #login {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.bg-slider {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: #808080;
+    transition: background-image 0.5s ease-in-out;
 }
