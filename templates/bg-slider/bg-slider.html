@@ -1,0 +1,5 @@
+<div style="background-image: url({{vm.arrayImages[vm.actualImage]}})" class="bg-slider">
+    <div class="buttons">
+        <div class="button" ng-class="vm.actualImage==$index?'active':'inactive'" ng-repeat="image in vm.arrayImages"  ng-click="vm.changeImage($index)"></div>
+    </div>
+</div>
