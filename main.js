@@ -15,8 +15,18 @@ function ImageCtrl($interval) {
     ]
     vm.actualImage = 0
     vm.style = {
-        'background-image': 'url(' + vm.images[vm.actualImage] + ')'
+        'background-image': 'url(' + vm.images[vm.actualImage] + ')',
+        'position': 'absolute',
+        'height': '100%',
+        'width': '100%',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat',
+        'background-attachment': 'scroll',
+        'background-color': '#808080',
+        'transition': 'background-image 0.5s ease-in-out'
     }
+
     vm.button = [
         'active',
         'inactive',
@@ -25,6 +35,7 @@ function ImageCtrl($interval) {
         'inactive',
         'inactive'
     ]
+    
     vm.changeImage = function (imageNumber) {
         vm.style['background-image'] = 'url(' + vm.images[imageNumber] + ')'
         vm.button[vm.actualImage] = 'inactive'
@@ -42,7 +53,7 @@ function ImageCtrl($interval) {
             vm.button[vm.images.length - 1] = 'inactive'
         } else {
             vm.actualImage++
-            vm.button[vm.actualImage-1] = 'inactive'
+            vm.button[vm.actualImage - 1] = 'inactive'
         }
         //Sin importar el valor al que cambie la variable, actualizamos el valor en el estilo
         vm.style['background-image'] = 'url(' + vm.images[vm.actualImage] + ')'
@@ -52,36 +63,8 @@ function ImageCtrl($interval) {
 
 function bgSlider() {
     return {
-        bindToController: {
-            actualImage: '=?',
-            images: '=?',
-            style: '=?',
-            changeImage: '=?',
-            state: '=?'
-        },
         controller: ImageCtrl,
-        controllesAs: 'slider',
-        template: [
-            `<div style="position: absolute;
-                height: 100%;
-                width: 100%;
-                background-image: url({{vm.images[vm.actualImage]}});
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                background-color: #808080;
-                transition: background-image 0.5s ease-in-out">
-                <div class="buttons">
-                    <div class="button {{vm.button[0]}}" ng-click="vm.changeImage(0)"></div>
-                    <div class="button {{vm.button[1]}}" ng-click="vm.changeImage(1)"></div>
-                    <div class="button {{vm.button[2]}}" ng-click="vm.changeImage(2)"></div>
-                    <div class="button {{vm.button[3]}}" ng-click="vm.changeImage(3)"></div>
-                    <div class="button {{vm.button[4]}}" ng-click="vm.changeImage(4)"></div>
-                    <div class="button {{vm.button[5]}}" ng-click="vm.changeImage(5)"></div>
-                </div>
-            </div>`
-        ]
+        templateUrl: 'templates/bg-slider/bg-slider.html'
     }
 }
 
