@@ -1,7 +1,14 @@
 angular
     .module('app', [])
-    .controller('imageCtrl', ImageCtrl)
-    .directive('bgSlider', bgSlider)
+    // .directive('bgSlider', bgSlider)
+    .component('bgSlider', {
+        bindings: {
+            images: '@'
+        },
+        controller: ImageCtrl,
+        controllerAs: 'vm',
+        templateUrl: 'templates/bg-slider/bg-slider.html'
+    })
 
 function ImageCtrl($interval) {
     var vm = this
